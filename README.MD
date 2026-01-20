@@ -1,4 +1,4 @@
-# Readme
+# SPUR
 
 # Decoding Scientific Experimental Images:  The SPUR Benchmark for Perception, Understanding, and Reasoning
 
@@ -111,3 +111,4 @@ This benchmark is designed to expose model vulnerabilities in scientific image i
 ### Updated Additions (if applicable, adjust based on actual changes; if no specific change details provided, the above remains consistent as per the request to keep unchanged parts intact)
 
 *No additional changes specified—this README retains all original content while adhering to formatting and language requirements.*
+
