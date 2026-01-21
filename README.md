@@ -38,13 +38,6 @@ The `qa_pair_generation.py` script generates question-answer pairs based on scie
 - `multi_trend`: Generates cross-panel trend understanding questions
 - `reason`: Generates reasoning-based questions (qualitative and quantitative)
 
-### Usage
-
-```python
-# In qa_pair_generation.py, set the mode and run
-Mode = "single"  # or "multi_trend", "reason"
-
-```
 
 ### 2. Model Testing
 
@@ -57,7 +50,7 @@ The `api_test` directory contains scripts for testing models on the generated QA
 
 ```bash
 # Run the testing script with a specific mode
-python api_test/doubao.py
+python api_test/dase.py
 # (Modify the mode in the main function: "single", "multi_trend", or "reason")
 
 ```
@@ -111,4 +104,5 @@ This benchmark is designed to expose model vulnerabilities in scientific image i
 ### Updated Additions (if applicable, adjust based on actual changes; if no specific change details provided, the above remains consistent as per the request to keep unchanged parts intact)
 
 *No additional changes specified—this README retains all original content while adhering to formatting and language requirements.*
+
 
