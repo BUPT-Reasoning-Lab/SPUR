@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="title-row">
+                <img class="logo" src="assets/logo.png" alt="RoadMapper Logo">
+                <h1 class="title">RoadMapper</h1>
+            </div>
+            <p class="subtitle">A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems</p>
+
+            <div class="authors">
+                <span><strong>Jiacheng Liu</strong><sup>1</sup></span>
+                <span><strong>Zichen Tang</strong><sup>1</sup></span>
+                <span><strong>Zhongjun Yang</strong><sup>1</sup></span>
+                <span><strong>Xinyi Hu</strong><sup>1</sup></span>
+                <span><strong>Xueyuan Lin</strong><sup>2,3,4</sup></span>
+                <span><strong>Linwei Jia</strong><sup>1</sup></span>
+                <span><strong>Ruofei Bai</strong><sup>1</sup></span>
+                <span><strong>Rongjin Li</strong><sup>1</sup></span>
+                <span><strong>Shiyao Peng</strong><sup>1</sup></span>
+                <span><strong>Haocheng Gao</strong><sup>1</sup></span>
+                <span><strong>Haihong E</strong><sup>1</sup>*</span>
+            </div>
+
+            <div class="affiliations">
+                <p><sup>1</sup>Beijing University of Posts and Telecommunications</p>
+                <p><sup>2</sup>The Hong Kong University of Science and Technology (Guangzhou)</p>
+                <p><sup>3</sup>IDEA Research &nbsp; <sup>4</sup>Hithink RoyalFlush Information Network Co., Ltd.</p>
+                <p class="corresponding">* Corresponding author</p>
+            </div>
+
+            <div class="links">
+                <a href="https://arxiv.org" class="button" target="_blank" rel="noopener noreferrer">
+                    <i class="ai ai-arxiv" aria-hidden="true"></i>
+                    <span>arXiv</span>
+                </a>
+                <a href="https://github.com/BUPT-Reasoning-Lab/RoadMapper" class="button" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://huggingface.co/datasets/BUPT-Reasoning-Lab/RoadMapper" class="button" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="button-emoji" aria-hidden="true">🤗</span>
+                    <span>HuggingFace</span>
+                </a>
+                <span class="button button-accept">
+                    <i class="fa-solid fa-award" aria-hidden="true"></i>
+                    <span>ACL 2026 Findings</span>
+                </span>
+            </div>
+        </header>
+
+        <section class="abstract">
+            <h2>Abstract</h2>
+            <p>
+                People commonly leverage structured content to accelerate knowledge acquisition and research problem
+                solving.
+                Among these, roadmaps guide researchers through hierarchical subtasks to solve complex research problems
+                step by step.
+                Despite progress in structured content generation, the <strong>roadmap generation task</strong> has
+                remained unexplored.
+                To bridge this gap, we introduce <strong>RoadMap</strong>, a novel benchmark designed to evaluate the
+                ability of large language models (LLMs)
+                to construct high-quality roadmaps for solving complex research problems. Based on this, we identify
+                three limitations of LLMs:
+                (1) <em>lack of professional knowledge</em>, (2) <em>unreasonable task decomposition</em>, and (3)
+                <em>disordered logical relationships</em>.
+                To address these challenges, we propose <strong>RoadMapper</strong>, an LLM-based multi-agent system
+                that decomposes the research roadmap
+                generation task into three key stages (i.e., initial generation, knowledge augmentation, and iterative
+                "critique-revise-evaluate").
+                Extensive experiments demonstrate that RoadMapper can improve LLMs' ability for roadmap generation,
+                while enhancing average performance
+                by more than <strong>8%</strong> and <strong>saving 84% of the time</strong> required by human experts,
+                highlighting its effectiveness and application potential.
+            </p>
+        </section>
+
+        <section class="key-figures" aria-label="Important figures from the paper">
+            <h2>Key Figures</h2>
+            <div class="carousel" data-autoplay-interval="3000">
+                <button class="carousel-control prev" type="button" aria-label="Previous figure">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="carousel-track">
+                    <figure class="carousel-slide">
+                        <img src="assets/Benchmark_RoadMap.png" alt="RoadMap benchmark statistics and composition">
+                        <figcaption>Figure 1. Overview of the RoadMap benchmark.</figcaption>
+                    </figure>
+                    <figure class="carousel-slide active">
+                        <img src="assets/Method_RoadMapper.png" alt="RoadMapper method overview">
+                        <figcaption>Figure 2. Overview of the RoadMapper multi-agent methodology.</figcaption>
+                    </figure>
+                </div>
+                <button class="carousel-control next" type="button" aria-label="Next figure">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <div class="carousel-dots" aria-label="Figure selector">
+                    <button class="carousel-dot active" type="button" aria-label="Go to figure 1"></button>
+                    <button class="carousel-dot" type="button" aria-label="Go to figure 2"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (() => {
+            const carousel = document.querySelector(".carousel");
+            if (!carousel) {
+                return;
+            }
+
+            const slides = carousel.querySelectorAll(".carousel-slide");
+            const dots = carousel.querySelectorAll(".carousel-dot");
+            const prevButton = carousel.querySelector(".carousel-control.prev");
+            const nextButton = carousel.querySelector(".carousel-control.next");
+            const autoplayInterval = Number(carousel.dataset.autoplayInterval) || 4500;
+            let currentIndex = 0;
+            let timerId = null;
+
+            const setSlide = (nextIndex) => {
+                const total = slides.length;
+                currentIndex = (nextIndex + total) % total;
+
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle("active", index === currentIndex);
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle("active", index === currentIndex);
+                });
+            };
+
+            const startAutoplay = () => {
+                stopAutoplay();
+                timerId = window.setInterval(() => {
+                    setSlide(currentIndex + 1);
+                }, autoplayInterval);
+            };
+
+            const stopAutoplay = () => {
+                if (timerId !== null) {
+                    window.clearInterval(timerId);
+                    timerId = null;
+                }
+            };
+
+            prevButton?.addEventListener("click", () => {
+                setSlide(currentIndex - 1);
+            });
+
+            nextButton?.addEventListener("click", () => {
+                setSlide(currentIndex + 1);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => {
+                    setSlide(index);
+                });
+            });
+
+            carousel.addEventListener("mouseenter", stopAutoplay);
+            carousel.addEventListener("mouseleave", startAutoplay);
+            carousel.addEventListener("focusin", stopAutoplay);
+            carousel.addEventListener("focusout", startAutoplay);
+
+            setSlide(0);
+            startAutoplay();
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Source Serif 4", "Times New Roman", serif;
+    color: black;
+    line-height: 1.5;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+}
+
+.title {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1.25;
+}
+
+.subtitle {
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.authors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+    margin: 0 auto 1rem;
+    max-width: 55rem;
+    font-size: 1.2rem;
+}
+
+.authors span {
+    white-space: nowrap;
+}
+
+.affiliations p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.corresponding {
+    color: #666666;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background: #363636;
+    color: #f0f0f0;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.button-emoji {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.button:hover {
+    background: #000000;
+}
+
+.button-accept {
+    background: #c62828;
+}
+
+.button-accept:hover {
+    background: #a61f1f;
+}
+
+h2 {
+    margin: 0 0 0.5rem;
+    text-align: center;
+}
+
+.key-figures {
+    margin: 1rem 0;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #d8d8d8;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+    background: #ffffff;
+}
+
+.carousel-track {
+    position: relative;
+}
+
+.carousel-slide {
+    margin: 0;
+    display: none;
+    text-align: center;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: 35rem;
+    object-fit: contain;
+}
+
+.carousel-slide figcaption {
+    margin-top: 0.75rem;
+    color: #4d4d4d;
+    font-size: 1rem;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 10rem;
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    z-index: 2;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+    left: 0.75rem;
+}
+
+.carousel-control.next {
+    right: 0.75rem;
+}
+
+.carousel-dots {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.carousel-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 10rem;
+    border: 0;
+    padding: 0;
+    background: #b8b8b8;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: #363636;
+    transform: scale(1.15);
+}
+
+.abstract p {
+    margin: 0;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem 1rem 2.25rem;
+        width: 92%;
+    }
+
+    .title-row {
+        gap: 0.75rem;
+    }
+
+    .title {
+        font-size: clamp(1.35rem, 6vw, 2rem);
+    }
+
+    .logo {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .subtitle {
+        margin: 0.75rem 0.5rem;
+        font-size: 1.05rem;
+    }
+
+    .authors {
+        gap: 0.4rem 0.75rem;
+        font-size: 1rem;
+    }
+
+    .affiliations p {
+        font-size: 0.95rem;
+    }
+
+    .links {
+        gap: 0.75rem;
+    }
+
+    .button {
+        font-size: 0.95rem;
+        padding: 0.45rem 0.9rem;
+    }
+
+    .carousel {
+        padding: 1rem 2.25rem;
+    }
+
+    .carousel-slide img {
+        height: 25rem;
+    }
+
+    .carousel-control {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .carousel-control.prev {
+        left: 0.45rem;
+    }
+
+    .carousel-control.next {
+        right: 0.45rem;
+    }
+}
